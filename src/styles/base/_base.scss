@@ -1,0 +1,47 @@
+@use "../abstracts" as *;
+
+html {
+
+  // Блокируем скролл страницы
+  &.is-lock {
+    overflow: hidden !important;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  background-color: tomato;
+}
+
+main {
+  // Прибиваем footer в низ страницы
+  flex-grow: 1;
+}
+
+a,
+button,
+label,
+input,
+select,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+// Делаем большую активную зону у ссылок и кнопок с иконками без текста
+
+a, button {
+  &[aria-label] {
+    position: relative;
+
+    &::before {
+      @include abs-center();
+      content: '';
+      @include square(44px);
+    }
+  }
+}
+
+

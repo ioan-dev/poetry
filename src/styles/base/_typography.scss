@@ -1,0 +1,52 @@
+@use "../abstracts" as *;
+
+
+html {
+
+  font-size: $vw-1920;
+
+  @include laptop {
+    font-size: $vw-1440;
+  }
+
+  @include tablet {
+    font-size: $vw-768;
+  }
+
+  @include mobile {
+    font-size: $vw-375;
+  }
+
+  //font-size: calc(0.625rem + $vw-1920);
+  //
+  //@include laptop {
+  //  font-size: calc(0.625rem + $vw-1440);
+  //}
+  //
+  //@include tablet {
+  //  font-size: calc(0.625rem + $vw-1024);
+  //}
+  //
+  //@include mobile {
+  //  font-size: calc(0.625rem + $vw-375);
+  //}
+}
+
+body {
+  font-size: 32px;
+}
+
+a {
+  color: inherit;
+
+  // Сбрасываем text decoration у ссылок с классами
+
+  &[class] {
+    text-decoration: none;
+  }
+
+}
+
+
+p {
+}

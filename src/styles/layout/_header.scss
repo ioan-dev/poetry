@@ -1,0 +1,42 @@
+@use "../abstracts" as *;
+
+.header {
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__overlay {
+    @include mobile-above {
+      display: contents;
+    }
+
+    @include mobile {
+      position: fixed;
+      inset: 0;
+      padding: 16px;
+      background-color: darkcyan;
+      transition-duration: var(--transition-duration);
+
+      &:not(.is-active) {
+        @include hide;
+
+        translate: 100%;
+      }
+    }
+  }
+
+  &__menu-list {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  &__menu-link {
+
+    &.is-active {
+      color: tomato;
+      pointer-events: none;
+    }
+  }
+}

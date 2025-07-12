@@ -1,0 +1,71 @@
+@use "../abstracts" as *;
+
+.burger {
+  --_height: 2px;
+  --_center: calc(50% - var(--_height) / 2);
+  --_padding-x: 4px;
+  --_padding-y: 4px;
+
+  @include square(34px);
+  position: relative;
+  padding: var(--_padding-y) var(--_padding-x);
+  color: red;
+  border: none;
+
+  &__line {
+    position: absolute;
+    width: calc(100% - var(--_padding-x) * 2);
+    height: var(--_height);
+    background-color: currentColor;
+    transition-duration: var(--transition-duration);
+
+    &:nth-child(1) {
+      top: var(--_padding-y);
+      left: var(--_padding-x);
+    }
+
+    &:nth-child(2) {
+      top: var(--_center);
+      left: var(--_padding-x);
+    }
+
+    &:nth-child(3) {
+      bottom: var(--_padding-y);
+      left: var(--_padding-x);
+    }
+  }
+
+  &.is-active {
+    .burger__line {
+
+      &:nth-child(1) {
+        top: var(--_center);
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        top: var(--_center);
+        transform: rotate(-45deg);
+      }
+
+      &:first-child {
+        //rotate: 45deg;
+        //transform-origin: 0;
+        //translate: 0.25em -0.1em;
+      }
+
+      &:nth-child(2) {
+        //rotate: -45deg;
+      }
+
+      &:last-child {
+        //width: 0;
+      }
+
+    }
+  }
+}

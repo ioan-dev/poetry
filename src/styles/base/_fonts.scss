@@ -1,0 +1,18 @@
+// Thin/Hairline - 100
+// Extra Light/Ultra Light - 200
+// Light - 300
+// Regular - 400
+// Medium - 500
+// Semi Bold/Demi Bold - 600
+// Bold - 700
+// Extra Bold/Ultra Bold - 800
+// Black/Heavy - 900
+
+
+@font-face {
+  font-family: 'MyFont';
+  //src: url(var(--font-primary)) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

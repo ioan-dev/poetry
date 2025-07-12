@@ -1,0 +1,22 @@
+:root {
+  // TYPOGRAPHY
+  --font-primary: 'Montserrat', sans-serif;
+
+  // Container size
+  --container-width: 1400px;
+  --container-padding-x: 20px;
+
+  // Section
+  // Вертикальный padding для секций который нужно разделить на 2
+  // 160 / 2 = 80px
+  --section-padding-y: 80px;
+
+  // Viewport units fix
+  --100vw: 100vw;
+  --100vh: 100vh;
+
+  // Transition
+  --transition-duration: 0.2s;
+  --transition-duration-longer: 0.4s;
+}
+

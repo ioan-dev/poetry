@@ -1,0 +1,116 @@
+@use 'sass:math';
+@use 'functions' as *;
+
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin abs-x {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+}
+
+@mixin abs-y {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+/// @param {string} $property - CSS-свойство (например, width, margin-top)
+/// @param {number} $px - значение в пикселях
+/// @param {number} $base-height - базовая высота экрана
+@mixin size-vh($property, $px, $base-height: 1080) {
+  #{$property}: calc(#{(100 / $base-height)} * #{if(unitless($px), px, unit($px))});
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@mixin full-vw-centered-line(
+  $property: top,
+  $left: 50%,
+  $right: auto,
+  $translate: -50%
+) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: $left;
+    right: $right;
+    #{$property}: 0;
+    translate: $translate;
+    width: var(--100vw);
+    height: rem(1);
+    background-color: var(--color-dark-15);
+  }
+}
+
+// Container mixin
+@mixin container($max-width: var(--container-max-width)) {
+  width: 100%;
+  max-width: $max-width;
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+// Focus styles
+@mixin focus-visible {
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+// Hover with reduced motion support
+@mixin hover {
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+
+
