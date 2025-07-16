@@ -7,7 +7,7 @@
   <script type="module" crossorigin src="/poetry/assets/main-fFaUq69n.js"></script>
   <link rel="stylesheet" crossorigin href="/poetry/assets/main-DgTI4l7F.css">
 </head>
-<body>
+<body class="releases">
 <!--HEADER-->
 <header class="header">
     <div class="header__inner container">
@@ -93,36 +93,44 @@
 
 </header>
 
-<!--HERO-->
-<div class="hero">
-    <img src="/poetry/images/hero_image.png" alt="Изображение" class="hero__image">
+<div class="releases__inner container">
+    <div class="releases__grid grid">
+        <h2 class="title grid__title">Выпуски</h2>
+        <div class="releases__body grid__content" data-tabs>
+            <div class="releases__btn-wrapper">
+                <button class="releases__btn releases__btn--active" data-tab="0">номера</button>
+                <button class="releases__btn" data-tab="1">дайджест</button>
+            </div>
+            <ul class="releases__list releases__list--active">
+                <li class="releases__item">
+                    <a href="/" class="releases__link title-size-m">Второй номер
+                    </a>
+                    <span class="releases__data">август 2025</span>
+                </li>
+                <li class="releases__item ">
+                    <a href="/" class="releases__link title-size-m">Первый номер
+                    </a>
+                    <span class="releases__data">июль 2025</span>
+                </li>
+            </ul>
+            <ul class="releases__list">
+                <li class="releases__item">
+                    <a href="/" class="releases__link title-size-m">100 лет со Дня Рождения Кошелева
+                    </a>
+                    <span class="releases__data">Бордуновский, Долгов</span>
+                </li>
+                <li class="releases__item ">
+                    <a href="/" class="releases__link title-size-m">Название материала
+                    </a>
+                    <span class="releases__data">Владимир Кошелев</span>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
-<!--&lt;!&ndash;SEARCH&ndash;&gt;-->
-<!--<div class="search">-->
-<!--    <div class="search__inner container">-->
-<!--        <div class="search__header">-->
-<!--            <input class="search__input" type="search" placeholder="имя автора, название подборки, стихотворение">-->
-<!--            <button class="search__button btn btn&#45;&#45;large">закрыть</button>-->
-<!--        </div>-->
-<!--        &lt;!&ndash;    <ul class="search__list">&ndash;&gt;-->
-<!--        &lt;!&ndash;        <li class="search__item">&ndash;&gt;-->
-<!--        &lt;!&ndash;            &ndash;&gt;-->
-<!--        &lt;!&ndash;        </li>&ndash;&gt;-->
-<!--        &lt;!&ndash;    </ul>&ndash;&gt;-->
-<!--    </div>-->
 
-<!--</div>-->
 
-<!--FOOTER-->
-<footer class="footer">
-    <div class="footer__inner container">
-        <a href="/" class="footer__item footer__item--left hidden-tablet">права и конфиденциальность</a>
-        <a href="/" class="footer__item footer__item--center footer__item--dark hidden-tablet">последний номер</a>
-        <button class="footer__search btn footer__item--right visible-tablet" data-btn="search">поиск</button>
-        <button class="footer__item btn">язык</button>
-    </div>
-</footer>
 
 </body>
 </html>
