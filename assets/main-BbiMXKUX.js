@@ -74,6 +74,8 @@ function More() {
         this.textContent = "подробнее";
       } else {
         wrapper.classList.add("open");
+        wrapper.style.height = "0px";
+        void wrapper.offsetWidth;
         wrapper.style.height = wrapper.scrollHeight + "px";
         this.textContent = "свернуть";
       }
@@ -81,6 +83,8 @@ function More() {
     button.previousElementSibling.addEventListener("transitionend", function() {
       if (this.classList.contains("open")) {
         this.style.height = "auto";
+      } else {
+        this.style.height = "0px";
       }
     });
   });
