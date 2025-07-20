@@ -1090,3 +1090,22 @@ p {
 .materials__desc {
   color: var(--color-gray);
 }
+
+.policy {
+  padding-top: var(--page-padding-top-desktop);
+  padding-bottom: var(--page-padding-bottom-desktop);
+}
+@media (max-width: 767px) {
+  .policy {
+    padding-top: var(--page-padding-top-mobile);
+    padding-bottom: var(--page-padding-bottom-mobile);
+  }
+}
+.policy__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.125rem;
+}
+.policy__desc {
+  color: var(--color-gray);
+}
