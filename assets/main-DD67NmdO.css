@@ -253,7 +253,7 @@ html {
 }
 @media (max-width: 1440px) {
   html {
-    font-size: 1.143vw;
+    font-size: 0.833vw;
   }
 }
 @media (max-width: 1023px) {
