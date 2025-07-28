@@ -89,8 +89,30 @@ function More() {
     });
   });
 }
+function AuthorMove() {
+  const filterButtons = document.querySelectorAll(".authors__filter-btn");
+  if (filterButtons.length > 1) {
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        const letter = button.getAttribute("data-letter");
+        const targetElement = document.querySelector(`.authors__item-title[data-letter="${letter}"]`);
+        console.log(targetElement);
+        if (targetElement) {
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: targetPosition - 20,
+            // Отступ сверху для лучшей видимости
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  }
+}
 document.addEventListener("DOMContentLoaded", () => {
   new BurgerMenu();
   new ReleasesTabs();
   new More();
+  new AuthorMove();
 });
