@@ -778,7 +778,7 @@ p {
 .about__item-header {
   display: flex;
   flex-direction: column;
-  row-gap: 1.25rem;
+  row-gap: 0.625rem;
 }
 @media (max-width: 767px) {
   .about__item-header {
@@ -1058,6 +1058,10 @@ p {
 }
 .print__more-wrapper--active {
   height: auto;
+}
+.print__btn-wrapper {
+  display: flex;
+  column-gap: 3.625rem;
 }
 .print__more-btn {
   font-size: 1.25rem;
